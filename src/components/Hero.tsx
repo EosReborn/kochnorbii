@@ -35,28 +35,47 @@ export default function Hero() {
       <div className="noise pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className="container-edge relative flex flex-1 flex-col justify-center">
-        <p className="mb-6 font-body text-sm text-stone md:mb-8">
-          Designer. Developer. Builder.
+        <p
+          className="hero-in mb-6 font-body text-sm text-stone md:mb-8"
+          style={{ animationDelay: "0ms" }}
+        >
+          Tervező. Fejlesztő. Alkotó.
         </p>
 
         <h1 className="font-display font-medium leading-[0.92] tracking-tight text-paper">
-          <span className="block text-[clamp(3.2rem,14vw,10.5rem)]">Koch</span>
-          <span className="block text-[clamp(3.2rem,14vw,10.5rem)]">Norbert</span>
+          <span
+            className="hero-in block text-[clamp(3.2rem,14vw,10.5rem)]"
+            style={{ animationDelay: "90ms" }}
+          >
+            Koch
+          </span>
+          <span
+            className="hero-in block text-[clamp(3.2rem,14vw,10.5rem)]"
+            style={{ animationDelay: "170ms" }}
+          >
+            Norbert
+          </span>
         </h1>
 
         <div className="mt-10 flex max-w-md flex-col gap-8 md:mt-14 md:max-w-lg">
-          <p className="font-body text-lg leading-relaxed text-paper/85 md:text-xl">
+          <p
+            className="hero-in font-body text-lg leading-relaxed text-paper/85 md:text-xl"
+            style={{ animationDelay: "300ms" }}
+          >
             Digitális élményeket, weboldalakat és termékeket tervezek és
             építek — a vizuális minőség és a technikai megvalósítás
             metszetében.
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
+          <div
+            className="hero-in flex flex-wrap items-center gap-x-10 gap-y-4"
+            style={{ animationDelay: "400ms" }}
+          >
             <a
               href="#work"
               className="underline-hover font-body text-base text-paper"
             >
-              Selected Work
+              Kiemelt munkák
             </a>
             <a
               href={site.studio.url}
@@ -70,11 +89,14 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="container-edge relative flex items-center justify-between border-t border-line py-6 font-body text-xs text-stone">
+      <div
+        className="hero-in container-edge relative flex items-center justify-between border-t border-line py-6 font-body text-xs text-stone"
+        style={{ animationDelay: "520ms" }}
+      >
         <LocalTime />
         <span className="hidden items-center gap-2 sm:flex" aria-hidden="true">
           <span className="h-8 w-px animate-pulse bg-[var(--line-strong)]" />
-          Scroll
+          Görgess
         </span>
       </div>
     </section>

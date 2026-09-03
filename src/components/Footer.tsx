@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
 
       <p className="mt-8 font-body text-xs text-stone/70">
-        Built by Koch Norbert
+        Készítette: Koch Norbert
       </p>
     </footer>
   );

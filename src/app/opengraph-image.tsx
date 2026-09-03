@@ -29,7 +29,7 @@ export default function OpengraphImage() {
             Koch Norbert
           </div>
           <div style={{ display: "flex", fontSize: 32, marginTop: 24, color: "#8d897f" }}>
-            Digital Designer &amp; Developer
+            {site.jobTitle}
           </div>
         </div>
       </div>

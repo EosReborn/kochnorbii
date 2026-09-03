@@ -23,7 +23,7 @@ export default function About() {
           className="flex flex-col gap-6 md:col-span-4 md:col-start-9"
         >
           <p className="font-body text-base leading-relaxed text-paper/75">
-            Koch Norbert vagyok, designer és developer. Olyan digitális
+            Koch Norbert vagyok, tervező és fejlesztő. Olyan digitális
             élményeket szeretek létrehozni, amelyek egyszerre működnek jól és
             néznek ki jól. A design, a fejlesztés és az üzleti gondolkodás
             metszetében dolgozom.

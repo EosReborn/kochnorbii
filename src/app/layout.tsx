@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { site } from "@/lib/site";
+import CookieConsent from "@/components/CookieConsent";
 
 // Self-hosted variable fontok next/font/local-lal: Bricolage Grotesque
 // (display) és Instrument Sans (body), magyar ékezetes karakterekhez
@@ -54,7 +55,7 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   url: site.url,
-  jobTitle: "Digital Designer & Developer",
+  jobTitle: site.jobTitle,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Budapest",
@@ -81,6 +82,7 @@ export default function RootLayout({
           Ugrás a tartalomra
         </a>
         {children}
+        <CookieConsent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

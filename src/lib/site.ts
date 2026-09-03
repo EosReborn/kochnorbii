@@ -3,9 +3,10 @@ export const site = {
   shortName: "Koch Norbert",
   initials: "KN",
   url: "https://kochnorbert.hu",
-  title: "Koch Norbert — Digital Designer & Developer",
+  title: "Koch Norbert — Digitális tervező és fejlesztő",
   description:
-    "Koch Norbert digital designer és developer. Weboldalak, digitális termékek és interaktív webes élmények tervezése és fejlesztése.",
+    "Koch Norbert digitális tervező és fejlesztő. Weboldalak, digitális termékek és interaktív webes élmények tervezése és fejlesztése.",
+  jobTitle: "Digitális tervező és fejlesztő",
   locale: "hu_HU",
   location: "Budapest, Magyarország",
   email: "hello@kochnorbert.hu",
@@ -20,8 +21,8 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#lab", label: "Lab" },
-  { href: "#contact", label: "Contact" },
+  { href: "#work", label: "Munkák" },
+  { href: "#about", label: "Rólam" },
+  { href: "#lab", label: "Labor" },
+  { href: "#contact", label: "Kapcsolat" },
 ] as const;

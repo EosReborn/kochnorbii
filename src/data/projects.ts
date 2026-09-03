@@ -22,6 +22,7 @@ export const projects: Project[] = [
     image: "/projects/fazekas.svg",
     imageAlt:
       "Absztrakt, szerkezeti vonalrajz a Fazekas Teraszfedések projekthez",
+    href: "https://fazekasterasz.hu",
   },
   {
     slug: "joma-tech",
@@ -32,6 +33,7 @@ export const projects: Project[] = [
       "Technológiai vállalat számára épített gyors, moduláris weboldal, fókuszban a világos termékkommunikációval.",
     image: "/projects/joma-tech.svg",
     imageAlt: "Absztrakt hálórajz a JoMa-Tech projekthez",
+    href: "https://joma-tech.hu",
   },
   {
     slug: "kavalkad",
@@ -42,5 +44,6 @@ export const projects: Project[] = [
       "Dinamikus, mozgásra épülő vizuális rendszer és weboldal egy visszatérő rendezvénymárka számára.",
     image: "/projects/kavalkad.svg",
     imageAlt: "Absztrakt, sugárirányú kompozíció a Kavalkád projekthez",
+    href: "https://kavalkadevents.com",
   },
 ];

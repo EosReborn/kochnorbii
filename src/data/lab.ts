@@ -9,19 +9,19 @@ export type LabItem = {
 // AI projektekkel, WebGL demókkal vagy nyílt forráskódú eszközökkel.
 export const labItems: LabItem[] = [
   {
-    title: "Field Notes",
+    title: "Gyorsjegyzet",
     tagline: "Minimalista, helyi tárolású jegyzetfelület gyors gondolatokhoz.",
     status: "Prototípus",
     year: "2025",
   },
   {
-    title: "Type/Scale",
+    title: "Tipóskála",
     tagline: "Interaktív eszköz tipográfiai skálák vizuális összehasonlítására.",
     status: "Fejlesztés alatt",
     year: "2025",
   },
   {
-    title: "Grain",
+    title: "Szemcse",
     tagline: "Kis WebGL kísérlet procedurális textúrák és zaj generálására.",
     status: "Fejlesztés alatt",
     year: "2025",

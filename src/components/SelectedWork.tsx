@@ -10,7 +10,7 @@ export default function SelectedWork() {
         id="work-heading"
         className="font-display text-[clamp(2.4rem,6vw,4.8rem)] font-medium leading-[1.02] text-paper"
       >
-        Selected Work
+        Kiemelt munkák
       </Reveal>
 
       <div>

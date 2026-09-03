@@ -7,32 +7,32 @@ export type Capability = {
 export const capabilities: Capability[] = [
   {
     index: "01",
-    title: "Web Design",
+    title: "Webdesign",
     description: "Vizuális rendszerek, amelyek karaktert adnak egy digitális márkának.",
   },
   {
     index: "02",
-    title: "Frontend Development",
+    title: "Frontend fejlesztés",
     description: "Gyors, karbantartható kódbázisok modern eszközökkel felépítve.",
   },
   {
     index: "03",
-    title: "Creative Development",
+    title: "Kreatív fejlesztés",
     description: "Interakciók és motion, amik célt szolgálnak, nem csak dísznek vannak.",
   },
   {
     index: "04",
-    title: "UI / UX",
+    title: "UI / UX tervezés",
     description: "Használható, jól gondolkodó felületek — érthető döntések mögötte.",
   },
   {
     index: "05",
-    title: "Digital Products",
+    title: "Digitális termékek",
     description: "Ötlettől a működő termékig, a technikai és üzleti oldal összekötésével.",
   },
   {
     index: "06",
-    title: "Interactive Experiences",
+    title: "Interaktív élmények",
     description: "Egyedi, böngészőben futó élmények, ahol a részletek számítanak.",
   },
 ];

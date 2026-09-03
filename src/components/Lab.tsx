@@ -14,7 +14,7 @@ export default function Lab() {
           id="lab-heading"
           className="font-display text-[clamp(2.2rem,5vw,4rem)] font-medium text-paper md:col-span-6"
         >
-          Lab
+          Labor
         </Reveal>
         <Reveal
           delay={100}

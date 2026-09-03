@@ -127,3 +127,27 @@ body {
     transition: none;
   }
 }
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-in {
+  opacity: 0;
+  animation: hero-in 1s var(--ease-out) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
