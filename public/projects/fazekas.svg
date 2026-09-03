@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="t1">
+<title id="t1">Absztrakt szerkezeti vonalrajz - tetőfedés</title>
+<rect width="1200" height="1500" fill="#0b0b0a"/>
+<g stroke="#f3f1ea" stroke-width="1.5" opacity="0.9">
+<line x1="0" y1="1180" x2="1200" y2="1180"/>
+<line x1="600" y1="1180" x2="600" y2="420"/>
+<line x1="0" y1="1180" x2="600" y2="420"/>
+<line x1="1200" y1="1180" x2="600" y2="420"/>
+</g>
+<g stroke="#f3f1ea" stroke-width="1" opacity="0.35">
+<line x1="60" y1="1180" x2="600" y2="510"/>
+<line x1="180" y1="1180" x2="600" y2="600"/>
+<line x1="300" y1="1180" x2="600" y2="690"/>
+<line x1="420" y1="1180" x2="600" y2="780"/>
+<line x1="1140" y1="1180" x2="600" y2="510"/>
+<line x1="1020" y1="1180" x2="600" y2="600"/>
+<line x1="900" y1="1180" x2="600" y2="690"/>
+<line x1="780" y1="1180" x2="600" y2="780"/>
+</g>
+<g stroke="#f3f1ea" stroke-width="1" opacity="0.5">
+<line x1="90" y1="1005" x2="1110" y2="1005"/>
+<line x1="165" y1="830" x2="1035" y2="830"/>
+<line x1="255" y1="655" x2="945" y2="655"/>
+</g>
+<circle cx="600" cy="420" r="4" fill="#f3f1ea"/>
+<g stroke="#f3f1ea" stroke-width="1" opacity="0.25">
+<line x1="0" y1="1260" x2="1200" y2="1260"/>
+<line x1="0" y1="1340" x2="1200" y2="1340"/>
+</g>
+</svg>

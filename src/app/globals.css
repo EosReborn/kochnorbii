@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b0b0a;
+  --ink-soft: #131311;
+  --paper: #f3f1ea;
+  --paper-dim: #dedad0;
+  --stone: #8d897f;
+  --stone-soft: #56534c;
+  --line: rgba(243, 241, 234, 0.12);
+  --line-strong: rgba(243, 241, 234, 0.22);
+
+  --font-display: var(--font-bricolage);
+  --font-body: var(--font-instrument);
+
+  --nav-h: 4.5rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-stone: var(--stone);
+  --color-stone-soft: var(--stone-soft);
+  --color-line: var(--line);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  background: var(--ink);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 1px solid var(--paper);
+  outline-offset: 4px;
+}
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.container-edge {
+  padding-left: clamp(1.25rem, 5vw, 4.5rem);
+  padding-right: clamp(1.25rem, 5vw, 4.5rem);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  left: 1.25rem;
+  top: 1.25rem;
+}
+
+.underline-hover {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.5s var(--ease-out);
+}
+
+.underline-hover:hover,
+.underline-hover:focus-visible {
+  background-size: 100% 1px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
