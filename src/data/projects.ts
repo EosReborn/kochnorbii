@@ -7,6 +7,16 @@ export type Project = {
   image: string;
   imageAlt: string;
   href?: string;
+  /**
+   * Opcionális, kézzel készített/vágott statikus screenshot az adott
+   * projekt weboldaláról (pl. "/projects/screenshots/fazekas.jpg").
+   * Ha meg van adva, ez jelenik meg élő screenshot helyett — érdemes
+   * ezt használni, ha teljes kontrollt szeretnél a végeredményen
+   * (ahogy a kochdigitalstudio.hu esettanulmány-mockjain is). Ha nincs
+   * megadva, a komponens automatikusan élő screenshotot tölt be a
+   * `href` alapján.
+   */
+  screenshot?: string;
 };
 
 // Ide bővíthető később további projektekkel — a sorrend számít,
