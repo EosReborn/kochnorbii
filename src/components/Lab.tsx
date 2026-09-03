@@ -1,14 +1,17 @@
 import { labItems } from "@/data/lab";
 import Reveal from "./Reveal";
+import GhostNumber from "./GhostNumber";
 
 export default function Lab() {
   return (
     <section
       id="lab"
-      className="container-edge border-t border-line py-28 md:py-36"
+      className="container-edge relative border-t border-line py-28 md:py-40"
       aria-labelledby="lab-heading"
     >
-      <div className="mb-14 grid grid-cols-1 gap-6 md:mb-20 md:grid-cols-12">
+      <GhostNumber value="04" className="absolute -top-6 right-4 md:right-8" />
+
+      <div className="relative mb-16 grid grid-cols-1 gap-6 md:mb-24 md:grid-cols-12">
         <Reveal
           as="h2"
           id="lab-heading"
@@ -25,32 +28,41 @@ export default function Lab() {
         </Reveal>
       </div>
 
-      <ul className="grid grid-cols-1 gap-px bg-line md:grid-cols-3">
-        {labItems.map((item, i) => (
-          <Reveal
-            as="li"
-            key={item.title}
-            delay={i * 60}
-            className="flex flex-col justify-between gap-10 bg-ink px-8 py-10"
-          >
-            <div>
-              <span className="inline-flex items-center gap-2 font-body text-xs text-stone">
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-[var(--gold)]"
-                  aria-hidden="true"
-                />
-                {item.status}
+      <ul className="relative flex flex-col">
+        {labItems.map((item, i) => {
+          const alignRight = i % 2 === 1;
+          return (
+            <Reveal
+              as="li"
+              key={item.title}
+              delay={i * 60}
+              className={`group flex flex-col gap-3 border-t border-line py-10 last:border-b md:py-14 ${
+                alignRight ? "items-end text-right" : "items-start text-left"
+              }`}
+            >
+              <span
+                className={`inline-flex items-center gap-2 font-body text-xs text-stone ${
+                  alignRight ? "flex-row-reverse" : ""
+                }`}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)]" aria-hidden="true" />
+                {item.status} — {item.year}
               </span>
-              <h3 className="mt-6 font-display text-2xl text-paper">
+              <h3
+                className={`max-w-2xl font-display text-[clamp(2rem,6vw,4.2rem)] font-medium leading-[0.95] text-paper transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  alignRight
+                    ? "group-hover:-translate-x-2 group-hover:-skew-x-2"
+                    : "group-hover:translate-x-2 group-hover:skew-x-2"
+                }`}
+              >
                 {item.title}
               </h3>
-              <p className="mt-3 font-body text-sm leading-relaxed text-paper/70">
+              <p className="max-w-sm font-body text-sm leading-relaxed text-stone">
                 {item.tagline}
               </p>
-            </div>
-            <span className="font-body text-xs text-stone">{item.year}</span>
-          </Reveal>
-        ))}
+            </Reveal>
+          );
+        })}
       </ul>
     </section>
   );

@@ -27,8 +27,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-        scrolled || open ? "bg-ink/90 backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 bg-ink transition-[border-color] duration-500 ${
+        scrolled || open ? "border-b border-line" : "border-b border-transparent"
       }`}
     >
       <div className="container-edge flex h-18 items-center justify-between" style={{ height: "var(--nav-h)" }}>
