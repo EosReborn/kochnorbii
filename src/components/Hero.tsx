@@ -35,9 +35,14 @@ export default function Hero() {
       <div className="noise pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className="container-edge relative flex flex-1 flex-col justify-center">
+        <span
+          className="hero-in mb-5 block h-px w-10 bg-[var(--gold)] md:mb-6"
+          style={{ animationDelay: "0ms" }}
+          aria-hidden="true"
+        />
         <p
           className="hero-in mb-6 font-body text-sm text-stone md:mb-8"
-          style={{ animationDelay: "0ms" }}
+          style={{ animationDelay: "60ms" }}
         >
           Tervező. Fejlesztő. Alkotó.
         </p>

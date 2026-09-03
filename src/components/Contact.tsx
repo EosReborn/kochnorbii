@@ -21,7 +21,7 @@ export default function Contact() {
       <Reveal delay={120} className="mt-14">
         <a
           href={`mailto:${site.email}`}
-          className="underline-hover inline-block font-display text-[clamp(1.6rem,4.5vw,2.8rem)] text-paper"
+          className="underline-hover inline-block font-display text-[clamp(1.6rem,4.5vw,2.8rem)] text-[var(--gold)]"
         >
           {site.email}
         </a>

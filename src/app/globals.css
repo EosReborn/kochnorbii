@@ -9,6 +9,8 @@
   --stone-soft: #56534c;
   --line: rgba(243, 241, 234, 0.12);
   --line-strong: rgba(243, 241, 234, 0.22);
+  --gold: #b8934f;
+  --gold-soft: rgba(184, 147, 79, 0.4);
 
   --font-display: var(--font-bricolage);
   --font-body: var(--font-instrument);
@@ -25,6 +27,7 @@
   --color-stone: var(--stone);
   --color-stone-soft: var(--stone-soft);
   --color-line: var(--line);
+  --color-gold: var(--gold);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }

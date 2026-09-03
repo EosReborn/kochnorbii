@@ -36,7 +36,7 @@ export default function Lab() {
             <div>
               <span className="inline-flex items-center gap-2 font-body text-xs text-stone">
                 <span
-                  className="h-1.5 w-1.5 rounded-full bg-stone"
+                  className="h-1.5 w-1.5 rounded-full bg-[var(--gold)]"
                   aria-hidden="true"
                 />
                 {item.status}

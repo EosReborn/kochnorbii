@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks, site } from "@/lib/site";
 
@@ -33,9 +34,17 @@ export default function Navbar() {
       <div className="container-edge flex h-18 items-center justify-between" style={{ height: "var(--nav-h)" }}>
         <Link
           href="#top"
-          className="font-display text-sm tracking-wide text-paper"
+          className="flex items-center gap-2.5 font-display text-sm tracking-wide text-paper"
           onClick={handleLinkClick}
         >
+          <Image
+            src="/logo/mark.png"
+            alt=""
+            width={28}
+            height={28}
+            className="h-7 w-7"
+            priority
+          />
           Koch Norbert
         </Link>
 

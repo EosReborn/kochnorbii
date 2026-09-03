@@ -55,7 +55,7 @@ export default function ProjectItem({
           reversed ? "md:order-2" : "md:order-1"
         }`}
       >
-        <span className="mb-6 font-body text-xs text-stone">
+        <span className="mb-6 font-body text-xs text-[var(--gold)]">
           {number} / {totalStr}
         </span>
         <h3 className="font-display text-[clamp(2rem,4.2vw,3.4rem)] font-medium leading-[1.02] text-paper">
