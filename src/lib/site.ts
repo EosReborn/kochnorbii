@@ -8,7 +8,7 @@ export const site = {
     "Koch Norbert digitális tervező és fejlesztő. Weboldalak, digitális termékek és interaktív webes élmények tervezése és fejlesztése.",
   jobTitle: "Digitális tervező és fejlesztő",
   locale: "hu_HU",
-  location: "Budapest, Magyarország",
+  location: "Győr, Magyarország",
   email: "hello@kochnorbert.hu",
   studio: {
     name: "Koch Digital Studio",

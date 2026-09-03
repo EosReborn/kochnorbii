@@ -58,7 +58,7 @@ const jsonLd = {
   jobTitle: site.jobTitle,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Budapest",
+    addressLocality: "Győr",
     addressCountry: "HU",
   },
   worksFor: {
