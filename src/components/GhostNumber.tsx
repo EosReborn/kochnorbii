@@ -8,7 +8,7 @@ export default function GhostNumber({
   return (
     <span
       aria-hidden="true"
-      className={`ghost-num pointer-events-none select-none text-[clamp(6rem,22vw,14rem)] ${className}`}
+      className={`ghost-num pointer-events-none select-none text-[clamp(4.5rem,14vw,9rem)] ${className}`}
     >
       {value}
     </span>

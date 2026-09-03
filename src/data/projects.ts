@@ -2,19 +2,25 @@ export type Project = {
   slug: string;
   title: string;
   category: string;
-  year: string;
   description: string;
   image: string;
   imageAlt: string;
   href?: string;
   /**
+   * Opcionális évszám. Jelenleg egyik projektnél sincs megadva és a
+   * ProjectItem sem jeleníti meg — minden jelenlegi munka 2026-ban,
+   * a Koch Digital Studio indulásának évében készült, így redundáns
+   * lenne minden elemnél kiírni. Ha a portfólió később több évet fog
+   * át, ez a mező projektenként visszaállítható és megjeleníthető.
+   */
+  year?: string;
+  /**
    * Opcionális, kézzel készített/vágott statikus screenshot az adott
    * projekt weboldaláról (pl. "/projects/screenshots/fazekas.jpg").
    * Ha meg van adva, ez jelenik meg élő screenshot helyett — érdemes
-   * ezt használni, ha teljes kontrollt szeretnél a végeredményen
-   * (ahogy a kochdigitalstudio.hu esettanulmány-mockjain is). Ha nincs
-   * megadva, a komponens automatikusan élő screenshotot tölt be a
-   * `href` alapján.
+   * ezt használni, ha teljes kontrollt szeretnél a végeredményen.
+   * Ha nincs megadva, a komponens automatikusan élő screenshotot tölt
+   * be a `href` alapján.
    */
   screenshot?: string;
 };
@@ -25,8 +31,7 @@ export const projects: Project[] = [
   {
     slug: "fazekas-teraszfedesek",
     title: "Fazekas Teraszfedések",
-    category: "Márka & weboldal",
-    year: "2024",
+    category: "Web Design & Development",
     description:
       "Teljes digitális arculat és weboldal egy prémium teraszfedés-gyártónak, letisztult, bizalomépítő megjelenéssel.",
     image: "/projects/fazekas.svg",
@@ -37,8 +42,7 @@ export const projects: Project[] = [
   {
     slug: "joma-tech",
     title: "JoMa-Tech",
-    category: "Termékoldal & fejlesztés",
-    year: "2024",
+    category: "Web Design & Development",
     description:
       "Technológiai vállalat számára épített gyors, moduláris weboldal, fókuszban a világos termékkommunikációval.",
     image: "/projects/joma-tech.svg",
@@ -48,8 +52,7 @@ export const projects: Project[] = [
   {
     slug: "kavalkad",
     title: "Kavalkád",
-    category: "Esemény márka & digitális jelenlét",
-    year: "2023",
+    category: "Web Design & Development",
     description:
       "Dinamikus, mozgásra épülő vizuális rendszer és weboldal egy visszatérő rendezvénymárka számára.",
     image: "/projects/kavalkad.svg",

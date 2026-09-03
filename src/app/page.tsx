@@ -5,7 +5,6 @@ import SelectedWork from "@/components/SelectedWork";
 import About from "@/components/About";
 import Capabilities from "@/components/Capabilities";
 import Lab from "@/components/Lab";
-import Statement from "@/components/Statement";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,7 +19,6 @@ export default function Home() {
         <About />
         <Capabilities />
         <Lab />
-        <Statement />
         <Contact />
       </main>
       <Footer />

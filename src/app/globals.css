@@ -1,16 +1,26 @@
 @import "tailwindcss";
 
+/*
+  LIGHT / EDITORIAL THEME
+  A token-nevek (ink/paper/stone/gold) technikai okokból megmaradtak a
+  korábbi dark verzióból, csak az ÉRTÉKÜK cserélődött world fel:
+  --ink  = most a világos, meleg papír-háttér (korábban sötét bg volt)
+  --paper = most a sötét charcoal szöveg (korábban világos szöveg volt)
+  Ezáltal minden meglévő bg-ink / text-paper stb. Tailwind-osztály
+  automatikusan a helyes szerepet kapja, komponens-szintű módosítás
+  nélkül.
+*/
 :root {
-  --ink: #0b0b0a;
-  --ink-soft: #131311;
-  --paper: #f3f1ea;
-  --paper-dim: #dedad0;
-  --stone: #8d897f;
-  --stone-soft: #56534c;
-  --line: rgba(243, 241, 234, 0.12);
-  --line-strong: rgba(243, 241, 234, 0.22);
-  --gold: #b8934f;
-  --gold-soft: rgba(184, 147, 79, 0.4);
+  --ink: #f6f3ec;
+  --ink-soft: #efe9dc;
+  --paper: #1c1a17;
+  --paper-dim: #3d3830;
+  --stone: #6f6a61;
+  --stone-soft: #948c7e;
+  --line: rgba(28, 26, 23, 0.12);
+  --line-strong: rgba(28, 26, 23, 0.2);
+  --gold: #7c6144;
+  --gold-soft: rgba(124, 97, 68, 0.35);
 
   --font-display: var(--font-bricolage);
   --font-body: var(--font-instrument);
@@ -81,7 +91,7 @@ body {
 }
 
 .noise {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
@@ -119,7 +129,7 @@ body {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 0% 1px;
-  transition: background-size 0.6s var(--ease-out);
+  transition: background-size 0.5s var(--ease-out);
 }
 
 .underline-hover:hover,
@@ -127,51 +137,8 @@ body {
   background-size: 100% 1px;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-@keyframes hero-in {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-in {
-  opacity: 0;
-  animation: hero-in 1s var(--ease-out) forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-in {
-    opacity: 1;
-    animation: none;
-    transform: none;
-  }
-}
-
-/* Szellem-számok — a szekciók mögött lebegő, körvonalas, alig látható
-   számjegyek. Az egyetlen visszatérő szerkesztői/magazin-motívum. */
+/* Szellem-szám — nagyon halvány, körvonalas szám, kizárólag a Selected
+   Work szekciónál használva, egyetlen visszafogott editorial jelölésként. */
 .ghost-num {
   font-family: var(--font-display);
   font-weight: 600;
@@ -182,12 +149,13 @@ body {
   pointer-events: none;
 }
 
-/* A projektképek EGYETLEN nagy, koreografált mozgás-momentuma: egy
-   függönyszerű clip-path wipe, sima fade helyett. */
+/* A projektképek EGYETLEN nagy mozgás-momentuma: egy függönyszerű
+   clip-path wipe, sima fade helyett. Az oldal egyetlen scroll-alapú
+   animációja — minden más statikus vagy csak hoverre reagál. */
 .clip-reveal {
   clip-path: inset(0 0 100% 0);
-  transform: scale(1.06);
-  transition: clip-path 1.1s var(--ease-out), transform 1.3s var(--ease-out);
+  transform: scale(1.04);
+  transition: clip-path 1s var(--ease-out), transform 1.2s var(--ease-out);
 }
 
 .clip-reveal.is-visible {

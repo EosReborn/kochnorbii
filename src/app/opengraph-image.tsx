@@ -15,20 +15,20 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0b0b0a",
-          color: "#f3f1ea",
+          backgroundColor: "#f6f3ec",
+          color: "#1c1a17",
           padding: "72px",
           fontFamily: "Georgia, serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, color: "#8d897f" }}>
+        <div style={{ display: "flex", fontSize: 28, color: "#6f6a61" }}>
           {site.location}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 118, lineHeight: 1 }}>
             Koch Norbert
           </div>
-          <div style={{ display: "flex", fontSize: 32, marginTop: 24, color: "#8d897f" }}>
+          <div style={{ display: "flex", fontSize: 32, marginTop: 24, color: "#6f6a61" }}>
             {site.jobTitle}
           </div>
         </div>

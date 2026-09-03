@@ -72,14 +72,11 @@ export default function ProjectItem({
           )}
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
-          <h3 className="font-display text-[clamp(2.4rem,7vw,6rem)] font-medium leading-[0.95] tracking-tight text-paper">
+        <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-6">
+          <h3 className="font-display text-[clamp(2.2rem,6.5vw,5.4rem)] font-medium uppercase leading-[0.95] tracking-tight text-paper">
             {project.title}
           </h3>
-          <div className="flex shrink-0 gap-6 font-body text-sm text-stone md:flex-col md:items-end md:gap-1 md:text-right">
-            <span>{project.category}</span>
-            <span>{project.year}</span>
-          </div>
+          <span className="shrink-0 font-body text-sm text-stone">{project.category}</span>
         </div>
       </Wrapper>
     </article>

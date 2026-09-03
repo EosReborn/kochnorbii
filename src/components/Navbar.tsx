@@ -38,7 +38,7 @@ export default function Navbar() {
           onClick={handleLinkClick}
         >
           <Image
-            src="/logo/mark.png"
+            src="/logo/mark-dark.png"
             alt=""
             width={28}
             height={28}
