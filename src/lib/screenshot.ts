@@ -15,7 +15,7 @@
  */
 export function getSiteScreenshotUrl(
   url: string,
-  { width = 1600, height = 2200 }: { width?: number; height?: number } = {}
+  { width = 1600, height = 1000 }: { width?: number; height?: number } = {}
 ) {
   return `https://s0.wp.com/mshots/v1/${encodeURIComponent(url)}?w=${width}&h=${height}`;
 }
