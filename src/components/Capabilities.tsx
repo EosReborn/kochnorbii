@@ -17,13 +17,14 @@ export default function Capabilities() {
         {capabilities.map((cap) => (
           <li
             key={cap.index}
-            className="group grid grid-cols-1 items-baseline gap-x-4 border-t border-line py-7 last:border-b md:grid-cols-[1fr_2fr] md:items-center md:py-9"
+            className="group grid grid-cols-1 gap-3 border-t border-line py-8 last:border-b md:grid-cols-[3rem_1fr_2fr] md:items-baseline md:gap-6 md:py-10"
           >
-            <span className="font-display text-3xl text-paper transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 md:text-4xl">
+            <span className="font-body text-sm text-[var(--blue)]">{cap.index}</span>
+            <span className="font-display text-3xl text-paper transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:text-[var(--blue)] md:text-5xl">
               {cap.title}
             </span>
-            <span className="mt-2 max-w-md font-body text-sm text-stone md:mt-0 md:text-right md:opacity-0 md:transition-opacity md:duration-500 md:group-hover:opacity-100">
-              {cap.description}
+            <span className="font-body text-sm uppercase tracking-[0.06em] text-stone md:text-right">
+              {cap.items.join(" / ")}
             </span>
           </li>
         ))}

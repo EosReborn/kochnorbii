@@ -16,18 +16,19 @@
   csak azért, mert van accent szín.
 */
 :root {
-  --ink: #f6f3ec;
-  --ink-soft: #efe9dc;
-  --paper: #1c1a17;
-  --paper-dim: #3d3830;
-  --stone: #6f6a61;
-  --stone-soft: #948c7e;
-  --line: rgba(28, 26, 23, 0.12);
-  --line-strong: rgba(28, 26, 23, 0.2);
-  --blue: #2c4a8c;
-  --blue-soft: rgba(44, 74, 140, 0.35);
-  --green: #356148;
-  --green-soft: rgba(53, 97, 72, 0.35);
+  --ink: #f4f3ee;
+  --ink-soft: #ecebe5;
+  --paper: #171717;
+  --paper-dim: #3a3a38;
+  --stone: #6b6b66;
+  --stone-soft: #8f8f89;
+  --line: rgba(23, 23, 23, 0.14);
+  --line-strong: rgba(23, 23, 23, 0.24);
+  --blue: #165dff;
+  --blue-dark: #103ead;
+  --blue-soft: rgba(22, 93, 255, 0.35);
+  --green: #20b875;
+  --green-soft: rgba(32, 184, 117, 0.35);
 
   --font-display: var(--font-bricolage);
   --font-body: var(--font-instrument);
@@ -52,6 +53,7 @@
   --color-stone-soft: var(--stone-soft);
   --color-line: var(--line);
   --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
   --color-green: var(--green);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -89,7 +91,7 @@ body {
 }
 
 ::selection {
-  background: var(--paper);
+  background: var(--blue);
   color: var(--ink);
 }
 
@@ -143,18 +145,6 @@ body {
 .underline-hover:hover,
 .underline-hover:focus-visible {
   background-size: 100% 1px;
-}
-
-/* Szellem-szám — nagyon halvány, körvonalas szám, kizárólag a Selected
-   Work szekciónál használva, egyetlen visszafogott editorial jelölésként. */
-.ghost-num {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--line-strong);
-  user-select: none;
-  pointer-events: none;
 }
 
 /* A projektképek EGYETLEN nagy mozgás-momentuma: egy függönyszerű

@@ -7,11 +7,8 @@ export type Project = {
   imageAlt: string;
   href?: string;
   /**
-   * Opcionális évszám. Jelenleg egyik projektnél sincs megadva és a
-   * ProjectItem sem jeleníti meg — minden jelenlegi munka 2026-ban,
-   * a Koch Digital Studio indulásának évében készült, így redundáns
-   * lenne minden elemnél kiírni. Ha a portfólió később több évet fog
-   * át, ez a mező projektenként visszaállítható és megjeleníthető.
+   * Évszám — megjelenik a kategória mellett. Minden jelenlegi projekt
+   * 2026-os (a Koch Digital Studio indulásának éve).
    */
   year?: string;
   /**
@@ -30,7 +27,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "fazekas-teraszfedesek",
-    title: "Fazekas Teraszfedések",
+    title: "Fazekas Terasz",
     category: "Web Design & Development",
     description:
       "Teljes digitális arculat és weboldal egy prémium teraszfedés-gyártónak, letisztult, bizalomépítő megjelenéssel.",
@@ -53,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     slug: "kavalkad",
-    title: "Kavalkád",
+    title: "Kavalkád Events",
     category: "Web Design & Development",
     description:
       "Dinamikus, mozgásra épülő vizuális rendszer és weboldal egy visszatérő rendezvénymárka számára.",

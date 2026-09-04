@@ -30,6 +30,20 @@ function LocalTime() {
 export default function Hero() {
   return (
     <section id="top" className="relative pt-[var(--nav-h)]" aria-label="Bemutatkozás">
+      {/* Mobil spine-helyettesítő: vékony strukturális sáv, ugyanaz a
+          "nyomtatott kiadvány" motívum, mint a desktop bal oldali
+          gerincvonal — csak vízszintesen, mert md alatt a Spine rejtve
+          van. */}
+      <div
+        className="container-edge flex items-center gap-3 border-b border-line py-3 md:hidden"
+        aria-hidden="true"
+      >
+        <span className="h-px flex-1 bg-[var(--line-strong)]" />
+        <span className="whitespace-nowrap font-body text-[0.65rem] tracking-[0.2em] text-stone">
+          KOCH NORBERT — PORTFÓLIÓ
+        </span>
+      </div>
+
       <div className="flex flex-col">
         {/* Editorial metaadat: kis név + szerepkör + rövid intro.
             Mobilon a fotó FÖLÖTT, desktopon a fotó ALATT jelenik meg —

@@ -1,4 +1,4 @@
-import { labItems } from "@/data/lab";
+import { labItems, labSlots } from "@/data/lab";
 
 export default function Lab() {
   const hasItems = labItems.length > 0;
@@ -17,16 +17,13 @@ export default function Lab() {
           Labor
         </h2>
 
-        {!hasItems && (
-          <p className="font-body text-base leading-relaxed text-paper/80 md:col-span-6 md:col-start-7 md:text-lg">
-            Ide kerülnek majd a saját projektek, web experimentek, AI
-            projektek, UI ötletek, digitális termékek és creative coding
-            kísérletek — ahogy elkészülnek.
-          </p>
-        )}
+        <p className="font-body text-base leading-relaxed text-paper/80 md:col-span-5 md:col-start-8 md:text-lg">
+          Ötletek, kísérletek és dolgok, amelyeknek nem feltétlenül kell
+          ügyfélprojektnek lenniük.
+        </p>
       </div>
 
-      {hasItems && (
+      {hasItems ? (
         <ul className="mt-16 md:mt-20">
           {labItems.map((item) => {
             const Wrapper = item.href ? "a" : "div";
@@ -39,7 +36,7 @@ export default function Lab() {
                   {...wrapperProps}
                   className={`group flex flex-col gap-2 ${item.href ? "cursor-pointer" : ""}`}
                 >
-                  <span className="font-display text-2xl text-paper transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 md:text-3xl">
+                  <span className="font-display text-2xl text-paper transition-colors duration-300 group-hover:text-[var(--blue)] md:text-3xl">
                     {item.title}
                   </span>
                   <span className="max-w-md font-body text-sm text-stone">{item.tagline}</span>
@@ -47,6 +44,25 @@ export default function Lab() {
               </li>
             );
           })}
+        </ul>
+      ) : (
+        <ul className="mt-16 md:mt-20">
+          {labSlots.map((slot) => (
+            <li
+              key={slot.index}
+              className="flex items-baseline justify-between gap-6 border-t border-line py-8 last:border-b md:py-10"
+            >
+              <span className="flex items-baseline gap-6">
+                <span className="font-body text-sm text-[var(--blue)]">{slot.index}</span>
+                <span className="font-display text-2xl text-paper/50 md:text-3xl">
+                  {slot.label}
+                </span>
+              </span>
+              <span className="shrink-0 font-body text-xs uppercase tracking-[0.08em] text-stone">
+                Hamarosan
+              </span>
+            </li>
+          ))}
         </ul>
       )}
     </section>
