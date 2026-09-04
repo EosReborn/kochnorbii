@@ -61,7 +61,7 @@ export default function Spine() {
 
       <div className="flex flex-col items-center gap-3">
         <span
-          className="whitespace-nowrap font-body text-[0.65rem] tracking-[0.15em] text-[var(--gold)] transition-opacity duration-300"
+          className="whitespace-nowrap font-body text-[0.65rem] tracking-[0.15em] text-[var(--blue)] transition-opacity duration-300"
           style={{ writingMode: "vertical-rl" }}
         >
           {activeLabel}

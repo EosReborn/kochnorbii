@@ -14,7 +14,7 @@ export default function Contact() {
       >
         Van egy érdekes ötleted?
         <br />
-        Beszéljünk<span className="text-[var(--gold)]">.</span>
+        Beszéljünk<span className="text-[var(--blue)]">.</span>
       </a>
 
       <div className="mt-12 flex flex-wrap gap-x-10 gap-y-4 font-body text-sm text-stone">
@@ -22,7 +22,7 @@ export default function Contact() {
           href={site.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline-hover hover:text-paper"
+          className="underline-hover transition-colors hover:text-[var(--blue)]"
         >
           LinkedIn
         </a>
@@ -30,7 +30,7 @@ export default function Contact() {
           href={site.studio.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline-hover hover:text-paper"
+          className="underline-hover transition-colors hover:text-[var(--blue)]"
         >
           Koch Digital Studio
         </a>

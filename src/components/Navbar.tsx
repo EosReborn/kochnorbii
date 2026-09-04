@@ -53,7 +53,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="underline-hover font-body text-sm text-paper/80 transition-colors hover:text-paper"
+              className="underline-hover font-body text-sm text-paper/80 transition-colors hover:text-[var(--blue)]"
             >
               {link.label}
             </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
             href={site.studio.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline-hover font-body text-sm text-paper/80 transition-colors hover:text-paper"
+            className="underline-hover font-body text-sm text-paper/80 transition-colors hover:text-[var(--blue)]"
           >
             Koch Digital Studio ↗
           </a>

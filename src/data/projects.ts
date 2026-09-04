@@ -38,6 +38,7 @@ export const projects: Project[] = [
     imageAlt:
       "Absztrakt, szerkezeti vonalrajz a Fazekas Teraszfedések projekthez",
     href: "https://fazekasterasz.hu",
+    year: "2026",
   },
   {
     slug: "joma-tech",
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     image: "/projects/joma-tech.svg",
     imageAlt: "Absztrakt hálórajz a JoMa-Tech projekthez",
     href: "https://joma-tech.hu",
+    year: "2026",
   },
   {
     slug: "kavalkad",
@@ -58,5 +60,6 @@ export const projects: Project[] = [
     image: "/projects/kavalkad.svg",
     imageAlt: "Absztrakt, sugárirányú kompozíció a Kavalkád projekthez",
     href: "https://kavalkadevents.com",
+    year: "2026",
   },
 ];

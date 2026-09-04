@@ -18,7 +18,7 @@ export default function Footer() {
             href={site.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline-hover hover:text-paper"
+            className="underline-hover transition-colors hover:text-[var(--blue)]"
           >
             LinkedIn
           </a>
@@ -26,7 +26,7 @@ export default function Footer() {
             href={site.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline-hover hover:text-paper"
+            className="underline-hover transition-colors hover:text-[var(--blue)]"
           >
             GitHub
           </a>
@@ -34,7 +34,7 @@ export default function Footer() {
             href={site.studio.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline-hover hover:text-paper"
+            className="underline-hover transition-colors hover:text-[var(--blue)]"
           >
             Koch Digital Studio
           </a>

@@ -2,13 +2,18 @@
 
 /*
   LIGHT / EDITORIAL THEME
-  A token-nevek (ink/paper/stone/gold) technikai okokból megmaradtak a
+  A token-nevek (ink/paper/stone) technikai okokból megmaradtak a
   korábbi dark verzióból, csak az ÉRTÉKÜK cserélődött world fel:
   --ink  = most a világos, meleg papír-háttér (korábban sötét bg volt)
   --paper = most a sötét charcoal szöveg (korábban világos szöveg volt)
   Ezáltal minden meglévő bg-ink / text-paper stb. Tailwind-osztály
   automatikusan a helyes szerepet kapja, komponens-szintű módosítás
   nélkül.
+
+  Accent rendszer: --blue az elsődleges (aktív/hover nav, text linkek,
+  spine), --green kizárólag nagyon ritka, kis jelölésekhez (pl.
+  elérhetőség-pötty). Nincs kék-zöld gradient, nincs nagy CTA gomb
+  csak azért, mert van accent szín.
 */
 :root {
   --ink: #f6f3ec;
@@ -19,8 +24,10 @@
   --stone-soft: #948c7e;
   --line: rgba(28, 26, 23, 0.12);
   --line-strong: rgba(28, 26, 23, 0.2);
-  --gold: #7c6144;
-  --gold-soft: rgba(124, 97, 68, 0.35);
+  --blue: #2c4a8c;
+  --blue-soft: rgba(44, 74, 140, 0.35);
+  --green: #356148;
+  --green-soft: rgba(53, 97, 72, 0.35);
 
   --font-display: var(--font-bricolage);
   --font-body: var(--font-instrument);
@@ -44,7 +51,8 @@
   --color-stone: var(--stone);
   --color-stone-soft: var(--stone-soft);
   --color-line: var(--line);
-  --color-gold: var(--gold);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }

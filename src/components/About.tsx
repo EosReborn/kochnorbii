@@ -27,7 +27,7 @@ export default function About() {
               href={site.studio.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline-hover text-paper"
+              className="underline-hover text-paper transition-colors hover:text-[var(--blue)]"
             >
               Koch Digital Studio
             </a>{" "}
