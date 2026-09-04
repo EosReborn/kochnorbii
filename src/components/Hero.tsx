@@ -27,57 +27,48 @@ function LocalTime() {
   );
 }
 
-function WorkLink({ className = "" }: { className?: string }) {
-  return (
-    <a
-      href="#work"
-      className={`underline-hover inline-flex w-fit items-center gap-2 font-body text-base text-[var(--blue)] ${className}`}
-    >
-      Kiemelt munkák <span aria-hidden="true">→</span>
-    </a>
-  );
-}
-
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-[var(--nav-h)]" aria-label="Bemutatkozás">
-      {/* Aszimmetrikus fő terület: bal ~35% szöveg, jobb ~65% nagy kép.
-          Mobilon egyetlen oszlopba rendeződik (lásd sorrend lent). */}
-      <div className="flex flex-col md:grid md:min-h-[86svh] md:grid-cols-[minmax(0,35%)_minmax(0,65%)]">
-        {/* 1. Név + szerepkör + bemutatkozás (+ desktopon itt a link is) */}
-        <div className="container-edge order-1 flex flex-col justify-center gap-6 py-12 md:py-16 md:pr-10">
-          <div className="flex flex-col gap-4">
-            <h1 className="font-display text-[clamp(2.5rem,4vw,5rem)] font-medium leading-[1.05] tracking-tight text-paper">
+    <section id="top" className="relative pt-[var(--nav-h)]" aria-label="Bemutatkozás">
+      <div className="flex flex-col">
+        {/* Editorial metaadat: kis név + szerepkör + rövid intro.
+            Mobilon a fotó FÖLÖTT, desktopon a fotó ALATT jelenik meg —
+            ugyanaz a tartalom, csak a sorrend fordul meg (order). */}
+        <div className="container-edge order-1 flex flex-col gap-4 pb-8 pt-10 md:order-2 md:flex-row md:items-end md:justify-between md:pb-0 md:pt-10">
+          <div className="flex flex-col gap-2">
+            <h1 className="font-display text-[clamp(2rem,3vw,3.5rem)] font-medium leading-[1.05] tracking-tight text-paper">
               Koch Norbert
             </h1>
             <p className="font-body text-sm tracking-wide text-stone">
               Digital Designer &amp; Developer
             </p>
-            <p className="max-w-sm font-body text-base leading-relaxed text-paper/80">
-              Digitális felületeket tervezek és fejlesztek, ahol a design
-              és a technológia egyformán fontos.
-            </p>
           </div>
 
-          <WorkLink className="hidden md:inline-flex" />
+          <p className="max-w-sm font-body text-base leading-relaxed text-paper/80">
+            Digitális felületeket tervezek és fejlesztek, ahol a design
+            és a technológia egyformán fontos.
+          </p>
         </div>
 
-        {/* 2. Nagy, közel full-bleed kép — nincs card, keret, gradient. */}
-        <div className="relative order-2 min-h-[48vh] w-full overflow-hidden sm:min-h-[58vh] md:min-h-0">
-          <div className="group relative h-full w-full overflow-hidden">
+        {/* A hero fő vizuális eleme: nagy, cinematic fekete-fehér portré,
+            pontosan ott, ahol korábban az oversized "Koch Norbert"
+            tipográfia állt. Nincs szöveg a képen, nincs keret, nincs
+            gradient — a fotó önmagában marad tiszta. */}
+        <div className="bleed-edge order-2 md:order-1">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink-soft sm:aspect-[3/2] md:aspect-[2.15/1]">
             <Image
               src={heroImage.src}
               alt={heroImage.alt}
               fill
               priority
-              sizes="(min-width: 768px) 65vw, 100vw"
-              className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+              sizes="(min-width: 768px) calc(100vw - var(--spine-w)), 100vw"
+              className="object-cover object-[70%_20%] md:object-[58%_30%]"
             />
           </div>
         </div>
       </div>
 
-      {/* 3. Helyszín / elérhetőség — teljes szélességű elválasztó sáv. */}
+      {/* Helyszín / elérhetőség — teljes szélességű elválasztó sáv. */}
       <div className="container-edge relative flex flex-col gap-3 border-t border-line py-6 font-body text-xs text-stone sm:flex-row sm:items-center sm:justify-between">
         <span className="inline-flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--green)]" aria-hidden="true" />
@@ -86,9 +77,14 @@ export default function Hero() {
         <LocalTime />
       </div>
 
-      {/* 4. Kiemelt munkák link — mobilon a helyszín-sáv UTÁN jelenik meg. */}
-      <div className="container-edge py-8 md:hidden">
-        <WorkLink />
+      {/* Kiemelt munkák link. */}
+      <div className="container-edge py-8">
+        <a
+          href="#work"
+          className="underline-hover inline-flex w-fit items-center gap-2 font-body text-base text-[var(--blue)]"
+        >
+          Kiemelt munkák <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
   );

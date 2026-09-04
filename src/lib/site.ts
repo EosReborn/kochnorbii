@@ -1,8 +1,8 @@
 export const heroImage = {
-  // Ide kerül majd a saját fotó/vizuál — csak ezt a két értéket kell
-  // cserélni, a Hero komponensben semmi mást nem kell módosítani.
-  src: "/hero/placeholder.svg",
-  alt: "Editorial helykitöltő kép — hamarosan saját fotóra cserélve",
+  // Csere: ha új fotót kapsz, csak ezt a src-t (és igény esetén az
+  // object-position finomhangolást a Hero.tsx-ben) kell módosítani.
+  src: "/hero/koch-norbert-portrait.jpg",
+  alt: "Koch Norbert dolgozik, fekete-fehér portré",
 };
 
 export const site = {
