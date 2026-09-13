@@ -1,0 +1,565 @@
+<!DOCTYPE html><html class="light" lang="hu" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Koch Norbert — Digital Designer &amp; Developer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base { 
+      html, body { margin: 0; padding: 0; } 
+      body { overscroll-behavior: none; } 
+      main > :first-child { margin-top: 0 !important; } 
+      main > :last-child { margin-bottom: 0 !important; } 
+    } 
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "canvas-white": "#ffffff",
+            "surface-subtle": "#f8fafc",
+            "surface-muted": "#f1f5f9",
+            "surface-card": "#ffffff",
+            "surface-card-hover": "#f8fafc",
+            "border-subtle": "#e2e8f0",
+            "border-prominent": "#cbd5e1",
+            "text-main": "#0f172a",
+            "text-secondary": "#475569",
+            "text-muted": "#64748b",
+            "electric-blue": "#0055ff",
+            "status-available": "#059669",
+            "electric-glow": "rgba(0, 85, 255, 0.08)",
+            "primary": "#0055ff",
+            "on-primary": "#ffffff"
+          },
+          fontFamily: {
+            "display": ["Bricolage Grotesque", "sans-serif"],
+            "headline": ["Bricolage Grotesque", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"],
+            "label-code": ["JetBrains Mono", "monospace"]
+          },
+          spacing: {
+            "margin": "3rem",
+            "margin-mobile": "1.25rem",
+            "margin-tablet": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "3.5rem",
+            "space-3xl": "5.5rem",
+            "space-4xl": "7.5rem"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface-subtle text-text-main font-body antialiased min-h-screen flex flex-col selection:bg-electric-blue selection:text-white">
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+<div class="h-16 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<a class="flex items-center gap-2 group text-decoration-none" href="#">
+<span class="font-mono text-[13px] font-semibold tracking-wider text-text-main group-hover:text-electric-blue transition-colors">KOCH NORBERT</span>
+<span class="text-border-prominent font-mono text-xs">/</span>
+<span class="font-mono text-xs uppercase tracking-wider text-text-muted">Portfólió</span>
+</a>
+<div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-subtle border border-border-subtle">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-available opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-status-available"></span>
+</span>
+<span class="font-mono text-[11px] text-text-secondary font-medium tracking-wide">Elérhető új projektekre</span>
+</div>
+</div>
+<nav class="hidden lg:flex items-center gap-8"><a class="font-mono text-xs uppercase tracking-wider text-text-secondary hover:text-text-main transition-colors" href="#kiemelt-munkak">Munkáim</a>
+<a class="font-mono text-xs uppercase tracking-wider text-text-secondary hover:text-text-main transition-colors" href="#rolam">Rólam</a>
+<a class="font-mono text-xs uppercase tracking-wider text-text-secondary hover:text-text-main transition-colors" href="#szolgaltatasok">Szolgáltatások</a>
+<a class="font-mono text-xs uppercase tracking-wider text-text-secondary hover:text-text-main transition-colors" href="#labor">Saját projektek</a>
+<a class="font-mono text-xs uppercase tracking-wider text-text-secondary hover:text-text-main transition-colors" href="#kapcsolat">Kapcsolat</a></nav>
+<div class="flex items-center gap-space-md">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-white hover:bg-surface-subtle border border-border-subtle hover:border-electric-blue text-text-main font-mono text-xs transition-all duration-200 shadow-sm" href="https://kochdigitalstudio.hu" rel="noopener noreferrer" target="_blank">
+<span class="font-medium">Koch Digital Studio</span>
+<span class="text-electric-blue text-[11px] font-bold">↗</span>
+</a>
+<div class="w-8 h-8 rounded-full bg-surface-muted border border-border-subtle flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-text-main text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full flex-1 pt-16 bg-surface-subtle">
+<div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin pt-space-xl pb-space-3xl flex flex-col justify-between">
+<!-- Ambient subtle background glow -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[580px] h-[360px] bg-electric-glow blur-[150px] pointer-events-none rounded-full"></div>
+<!-- Top Status Bar in Hero -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<span class="font-mono text-xs font-semibold uppercase tracking-widest text-electric-blue">KOCH NORBERT — PORTFÓLIÓ</span>
+<span class="text-border-prominent text-xs">•</span>
+<div class="inline-flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-available opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-status-available"></span>
+</span>
+<span class="font-mono text-[11px] text-text-secondary uppercase tracking-wider">Elérhető új projektekre</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-text-muted font-mono text-xs">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-electric-blue">location_on</span>
+              Győr, Magyarország
+            </span>
+<span class="text-border-prominent">•</span>
+<span class="font-mono text-xs text-text-main font-medium" id="live-time">CET 17:18</span>
+</div>
+</div>
+<!-- Main Typographic Split Hero -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl pt-space-2xl items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div>
+<span class="font-mono text-xs font-medium text-text-muted uppercase tracking-widest">EGYEDI WEBOLDALAK &amp; DESIGN</span>
+</div>
+<h1 class="font-display text-[42px] leading-[1.08] sm:text-[54px] md:text-[68px] lg:text-[84px] text-text-main tracking-tight font-extrabold">
+              Digital Designer<br>
+<span class="text-slate-400">&amp; Webfejlesztő</span>
+</h1>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-end gap-space-lg pb-2"><p class="font-body text-base md:text-lg text-text-secondary leading-relaxed max-w-md">
+              Olyan weboldalakat készítek, amelyek nemcsak szépek, de vevőket és érdeklődőket is hoznak a vállalkozásodnak. Tervezéstől az élesítésig mindent egy kézben tartok.
+            </p>
+<div class="flex items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-2 px-5 py-3 rounded bg-text-main text-white font-body text-sm font-medium hover:bg-electric-blue transition-all duration-300 shadow-sm" href="#kiemelt-munkak">
+<span class="">Kiemelt munkáim megnézése</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-5 py-3 rounded bg-white hover:bg-surface-muted border border-border-subtle text-text-main font-body text-sm font-medium transition-all duration-200 shadow-sm" href="#kapcsolat">
+<span class="">Beszéljünk a projektedről</span>
+<span class="text-electric-blue text-[13px]">↗</span>
+</a>
+</div></div>
+</div>
+<!-- Visual Anchor / Portrait Banner Grid (8+ Év Blokkot Törölve, Neo-Swiss Tiszta Elrendezés) -->
+<div class="mt-space-2xl grid grid-cols-1 md:grid-cols-12 gap-space-lg items-stretch">
+<div class="md:col-span-8 relative group overflow-hidden rounded-lg bg-surface-muted border border-border-subtle h-[280px] sm:h-[360px] md:h-[420px]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95" style="object-position: center 25%;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3F3FkGfYl9IIYFnUirWHZjwDB0iqjV2v95yce3VXkRjiWlajCl_qNT_PB260-UG9kKrIqyiTtEPfg9KTbjj8A7Sa7nN8VzY5zj0kpYI40K4IBLFgq_Xkd-HZS9CvhY5tL9PHRaGSz-b888Hg9VPTV78tPw8Cem1levzUj7Zk0g_kt28HMnZthuNr8jK2RrjokwCLBCYdPrmG1m6ieyvS1DBy4Zsf-9PmneyUdS3aoghzcJlYKhCJrcoNLdPqzQs1oz1M" alt="Koch Norbert portrait">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 flex items-end justify-between"><div>
+<span class="font-mono text-xs text-white/80 uppercase tracking-wider">Tervezés &amp; Kivitelezés</span>
+<p class="font-display text-xl sm:text-2xl text-white font-bold tracking-tight">Koch Norbert — Weboldal készítő &amp; tervező</p>
+</div>
+<span class="font-mono text-xs uppercase text-white/90 px-3 py-1 rounded bg-black/50 backdrop-blur-md border border-white/20">
+Győr, 2026
+</span></div>
+</div>
+<!-- Quick Metric & Manifesto Bento Block (8+ Év nélkül, tágas, elegáns Neo-Swiss kártya) -->
+<div class="md:col-span-4 flex flex-col justify-between gap-space-md p-6 sm:p-8 rounded-lg bg-white border border-border-subtle shadow-sm hover:border-electric-blue/40 transition-colors"><div class="flex items-center justify-between border-b border-border-subtle pb-4">
+<span class="font-mono text-xs uppercase tracking-widest text-text-muted font-medium">Megbízhatósági Garancia</span>
+<span class="material-symbols-outlined text-[22px] text-status-available">verified</span>
+</div>
+<div class="my-auto py-4">
+<span class="font-display text-5xl lg:text-6xl font-extrabold text-text-main tracking-tight leading-none">100%</span>
+<p class="font-mono text-xs text-electric-blue font-semibold uppercase tracking-wider mt-2">Megbízhatóság és gyorsaság</p>
+<p class="font-body text-sm text-text-secondary mt-3 leading-relaxed">
+Villámgyors betöltés telefonon és gépen, áttekinthető szerkezet és pontos munka minden megbízásnál.
+</p>
+</div>
+<div class="pt-4 border-t border-border-subtle flex items-center justify-between text-text-muted">
+<span class="font-mono text-[11px] uppercase tracking-wider">Minőség</span>
+<span class="font-mono text-[11px] text-text-main font-semibold">Mobilbarát &amp; Precíz</span>
+</div></div>
+</div>
+</section>
+<!-- KIEMELT MUNKÁK (FEATURED WORKS) -->
+<section class="w-full bg-white border-y border-border-subtle py-space-3xl" id="kiemelt-munkak">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between pb-space-xl border-b border-border-subtle gap-space-md"><div>
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-widest">Referenciák</span>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-text-main font-bold tracking-tight mt-1">
+Elkészült munkák
+</h2>
+</div>
+<p class="font-body text-sm text-text-muted max-w-sm leading-relaxed">
+Néhány nemrég átadott weboldal, amit valódi vállalkozásoknak készítettem.
+</p></div>
+<!-- Projects List Showcase -->
+<div class="flex flex-col divide-y divide-border-subtle">
+<!-- 01 FAZEKAS TERASZ -->
+<article class="group relative py-space-xl lg:py-space-2xl transition-all duration-300 hover:bg-surface-subtle px-4 -mx-4 rounded-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-6 flex flex-col gap-space-sm"><div class="flex items-center gap-3">
+<span class="font-mono text-xl font-bold text-electric-blue">01</span>
+<span class="text-border-prominent font-mono text-xs">/</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-text-muted">WEBOLDAL TERVEZÉS ÉS KÉSZÍTÉS</span>
+</div>
+<h3 class="font-display text-2xl sm:text-3xl md:text-4xl text-text-main font-bold tracking-tight group-hover:text-electric-blue transition-colors">
+FAZEKAS TERASZ
+</h3>
+<p class="font-body text-sm sm:text-base text-text-secondary max-w-lg mt-1 leading-relaxed">Prémium teraszfedésekkel és pergolákkal foglalkozó győri vállalkozás weboldala. A látogatók könnyen böngészhetik a fotógalériát és pár kattintással személyre szabott árajánlatot kérhetnek.</p>
+<div class="flex flex-wrap gap-2 pt-2"><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Mobilbarát design</span><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Gyors betöltés</span><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Árajánlatkérő űrlap</span></div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-text-main hover:text-electric-blue transition-colors group/link" href="https://fazekasterasz.hu" rel="noopener noreferrer" target="_blank">
+<span class="tracking-wide uppercase">FAZEKASTERASZ.HU MEGTEKINTÉSE</span>
+<span class="material-symbols-outlined text-[18px] text-electric-blue group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div></div>
+<!-- Preview Card -->
+<div class="lg:col-span-6 relative overflow-hidden rounded-xl bg-surface-muted border border-border-subtle h-[260px] sm:h-[320px] md:h-[360px] group-hover:border-border-prominent shadow-sm transition-all"><img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Fazekas Terasz website mockup" src="https://lh3.googleusercontent.com/aida/AEtjO1VToIV-790w5kCjvg5cecHQtIb4kyFij3vs1ZVxK5ZRDz9GJyiv25_-gRIgIPvlpe2116bfwnvoNf1JnIlSVzdje3Z0MWLiviVyluaoYWnNACFBlhbiEJq36gnFYIFWsA-1CWif2AM0goGWzuZpafcV4bx720JTRRmBCrfaPsLa4fejF-vXe22IeRhyUlaAfyobE3iIcvogNkFTfGzxMeDL3KiQLXNnAFJQCk4v5XK3L-u5B5WYPilLJhif"><div class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded border border-border-subtle font-mono text-[11px] font-medium text-text-main flex items-center gap-1.5 shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span> ÉLŐ PROJEKT</div></div>
+</div>
+</article>
+<!-- 02 JOMA-TECH -->
+<article class="group relative py-space-xl lg:py-space-2xl transition-all duration-300 hover:bg-surface-subtle px-4 -mx-4 rounded-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-6 flex flex-col gap-space-sm"><div class="flex items-center gap-3">
+<span class="font-mono text-xl font-bold text-electric-blue">02</span>
+<span class="text-border-prominent font-mono text-xs">/</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-text-muted">CÉGES WEBOLDAL &amp; ARCULAT</span>
+</div>
+<h3 class="font-display text-2xl sm:text-3xl md:text-4xl text-text-main font-bold tracking-tight group-hover:text-electric-blue transition-colors">
+JOMA-TECH
+</h3>
+<p class="font-body text-sm sm:text-base text-text-secondary max-w-lg mt-1 leading-relaxed">Fémipari alkatrészgyártással és forgácsolással foglalkozó mérnöki cég bemutatkozó oldala. Látványosan és világosan mutatja be a gépparkot és a szakmai szolgáltatásokat a megrendelőknek.</p>
+<div class="flex flex-wrap gap-2 pt-2"><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Céges bemutatkozó oldal</span><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Könnyen átlátható géppark</span><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Kapcsolatfelvétel</span></div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-text-main hover:text-electric-blue transition-colors group/link" href="https://joma-tech.hu" rel="noopener noreferrer" target="_blank">
+<span class="tracking-wide uppercase">JOMA-TECH.HU MEGTEKINTÉSE</span>
+<span class="material-symbols-outlined text-[18px] text-electric-blue group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div></div>
+<!-- Preview Card 2 -->
+<div class="lg:col-span-6 relative overflow-hidden rounded-xl bg-surface-muted border border-border-subtle h-[260px] sm:h-[320px] md:h-[360px] group-hover:border-border-prominent shadow-sm transition-all"><img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="JoMa-Tech website mockup" src="https://lh3.googleusercontent.com/aida/AEtjO1VkzZErDu75TAf0DuNo6WNk3WIfevow8Aft_o9vJt-dRiPsfji9OfBDukxQDLGQl3u5zU7ufRsqmLtpTM2eTm7DNOxsSxKBEObcYUtasVVy8WGxcpsp-k-fMgsEaOwp1mSYPxw1XHCJLcGlKAUoW1ujDJLqeWER0e2U3kp5M2Ij3xZqnfqhk_aMUDg7KEEDKVziw8IrFfOGnvk4hqCYDVNBdz5n0UAk1c57o8JYuwkwRDcapjVjOOGUzfxZ"><div class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded border border-border-subtle font-mono text-[11px] font-medium text-text-main flex items-center gap-1.5 shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span> ÉLŐ PROJEKT</div></div>
+</div>
+</article>
+<!-- 03 KAVALKÁD EVENTS -->
+<article class="group relative py-space-xl lg:py-space-2xl transition-all duration-300 hover:bg-surface-subtle px-4 -mx-4 rounded-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-6 flex flex-col gap-space-sm"><div class="flex items-center gap-3">
+<span class="font-mono text-xl font-bold text-electric-blue">03</span>
+<span class="text-border-prominent font-mono text-xs">/</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-text-muted">ESEMÉNY WEBOLDAL &amp; JEGYÉRTÉKESÍTÉS</span>
+</div>
+<h3 class="font-display text-2xl sm:text-3xl md:text-4xl text-text-main font-bold tracking-tight group-hover:text-electric-blue transition-colors">
+KAVALKÁD EVENTS
+</h3>
+<p class="font-body text-sm sm:text-base text-text-secondary max-w-lg mt-1 leading-relaxed">Szabadtéri fesztiválok és élő koncertek élénk weboldala. A vendégek azonnal látják a fellépők időrendjét, a helyszíni tudnivalókat és közvetlenül jegyet tudnak vásárolni.</p>
+<div class="flex flex-wrap gap-2 pt-2"><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Rendezvény weboldal</span><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Fellépők és műsorrend</span><span class="font-mono text-[11px] px-2.5 py-1 rounded bg-surface-muted border border-border-subtle text-text-secondary font-medium">Online jegyvásárlás</span></div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-text-main hover:text-electric-blue transition-colors group/link" href="https://kavalkadevents.com" rel="noopener noreferrer" target="_blank">
+<span class="tracking-wide uppercase">KAVALKADEVENTS.COM MEGTEKINTÉSE</span>
+<span class="material-symbols-outlined text-[18px] text-electric-blue group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div></div>
+<!-- Preview Card 3 -->
+<div class="lg:col-span-6 relative overflow-hidden rounded-xl bg-surface-muted border border-border-subtle h-[260px] sm:h-[320px] md:h-[360px] group-hover:border-border-prominent shadow-sm transition-all"><img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Kavalkád Events website mockup" src="https://lh3.googleusercontent.com/aida/AEtjO1X5TnhBNEJswhj1A79VkvT3wMeKUChcusklmEKXrwH1DomLjmmJ35Ci3fbnck_L1X9Z5glwotRVYg9YppK04PRA_qS2efTY_I-G6RlUhGM0zQZncCYnpYWxaUDNSfzQJo8Pt0W30Nqt4pcAJi_4DIWelu3n4XwD6w0tZ2_7HCFxekhkIOTkERHgBOERsRtMktMVCBrMMv32arXP4H3a6QEPEg5py_gZqjJjpmjVCFyXEQVop416XhqZHjS7"><div class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded border border-border-subtle font-mono text-[11px] font-medium text-text-main flex items-center gap-1.5 shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span> ÉLŐ PROJEKT</div></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- RÓLAM / FILOZÓFIA (ABOUT & PHILOSOPHY) -->
+<section class="w-full py-space-3xl max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin" id="rolam">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start"><div class="lg:col-span-7 flex flex-col gap-space-md">
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-widest">Bemutatkozás</span>
+<h2 class="font-display text-2xl sm:text-3xl md:text-5xl text-text-main font-bold leading-[1.15] tracking-tight">
+Weboldalak, amelyek tényleg működnek és segítik a vállalkozásodat.
+</h2>
+<div class="h-1 w-16 bg-electric-blue mt-3 rounded-full"></div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-space-lg pt-2">
+<p class="font-body text-base md:text-lg text-text-secondary leading-relaxed">
+Koch Norbert vagyok, weboldalak tervezésével és fejlesztésével foglalkozom Győrben. Az a célom, hogy a weboldalad egyszerűen kezelhető legyen, jól mutasson bármilyen kijelzőn, és megkönnyítse az ügyfélszerzést.
+</p>
+<div class="p-6 rounded-lg bg-white border border-border-subtle hover:border-electric-blue transition-colors flex flex-col gap-space-sm relative shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-wider">Stúdió Háttér</span>
+<span class="material-symbols-outlined text-electric-blue text-[20px]">business</span>
+</div>
+<p class="font-body text-sm sm:text-base text-text-main leading-relaxed">
+Üzleti és céges weboldalakat a <a class="text-electric-blue hover:underline font-semibold" href="https://kochdigitalstudio.hu" rel="noopener noreferrer" target="_blank">Koch Digital Studio</a> égisze alatt vállalok.
+</p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-text-main hover:text-electric-blue transition-colors" href="https://kochdigitalstudio.hu" rel="noopener noreferrer" target="_blank">
+<span class="">kochdigitalstudio.hu</span>
+<span class="text-electric-blue">↗</span>
+</a>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between border-t border-border-subtle text-text-muted">
+<span class="font-mono text-[11px] uppercase tracking-wider">Önálló webfejlesztő &amp; designer — Győr</span>
+<span class="font-mono text-[11px] font-semibold text-text-secondary">Elérhető</span>
+</div>
+</div></div>
+</section>
+<!-- MIBEN TUDOK SEGÍTENI (SERVICES & CAPABILITIES) -->
+<section class="w-full bg-white border-y border-border-subtle py-space-3xl" id="szolgaltatasok">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin"><div class="flex flex-col md:flex-row md:items-end justify-between pb-space-xl border-b border-border-subtle gap-space-md">
+<div>
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-widest">Szolgáltatások</span>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-text-main font-bold tracking-tight mt-1">
+Miben tudok segíteni
+</h2>
+</div>
+<p class="font-body text-sm text-text-muted max-w-xs leading-relaxed">
+Az ötlettől és az első vázlatoktól a kész, működő weboldalig minden lépést lebonyolítok.
+</p>
+</div>
+<div class="flex flex-col divide-y divide-border-subtle">
+<div class="py-space-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md group hover:bg-surface-subtle px-4 -mx-4 rounded-xl transition-all duration-200">
+<div class="flex items-baseline gap-space-lg">
+<span class="font-mono text-2xl font-bold text-electric-blue">01</span>
+<div>
+<h3 class="font-display text-2xl md:text-3xl text-text-main font-bold group-hover:text-electric-blue transition-colors">
+Weboldal tervezés
+</h3>
+</div>
+</div>
+<div class="md:text-right max-w-md">
+<span class="font-body text-sm text-text-secondary">
+Megtervezem a weboldalad kinézetét, felépítését és színeit úgy, hogy a látogatók azonnal megtalálják, amit keresnek.
+</span>
+</div>
+</div>
+<div class="py-space-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md group hover:bg-surface-subtle px-4 -mx-4 rounded-xl transition-all duration-200">
+<div class="flex items-baseline gap-space-lg">
+<span class="font-mono text-2xl font-bold text-electric-blue">02</span>
+<div>
+<h3 class="font-display text-2xl md:text-3xl text-text-main font-bold group-hover:text-electric-blue transition-colors">
+Webfejlesztés
+</h3>
+</div>
+</div>
+<div class="md:text-right max-w-md">
+<span class="font-body text-sm text-text-secondary">
+Gyors, biztonságos és telefonon is tökéletesen működő weboldallá alakítom a terveket.
+</span>
+</div>
+</div>
+<div class="py-space-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md group hover:bg-surface-subtle px-4 -mx-4 rounded-xl transition-all duration-200">
+<div class="flex items-baseline gap-space-lg">
+<span class="font-mono text-2xl font-bold text-electric-blue">03</span>
+<div>
+<h3 class="font-display text-2xl md:text-3xl text-text-main font-bold group-hover:text-electric-blue transition-colors">
+Karbantartás &amp; Továbbfejlesztés
+</h3>
+</div>
+</div>
+<div class="md:text-right max-w-md">
+<span class="font-body text-sm text-text-secondary">
+Segítek az oldal frissítésében, új funkciók beépítésében és a hibamentes, stabil működésben.
+</span>
+</div>
+</div>
+</div></div>
+</section>
+<!-- LABOR (EXPERIMENTS & R&D) -->
+<section class="w-full py-space-3xl max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin" id="labor"><div class="flex flex-col md:flex-row md:items-end justify-between pb-space-xl border-b border-border-subtle gap-space-md">
+<div>
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-widest">Kreatív Műhely</span>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-text-main font-bold tracking-tight mt-1">
+Saját projektek
+</h2>
+</div>
+<p class="font-body text-sm sm:text-base text-text-secondary max-w-md">
+Olyan ötletek és kreatív fejlesztések, amiket kikapcsolódásként és új technológiák kipróbálására készítek.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg pt-space-xl">
+<div class="p-6 rounded-lg bg-white border border-border-subtle shadow-sm flex flex-col justify-between h-56 relative group hover:border-electric-blue transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xl font-bold text-electric-blue">01</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-muted border border-border-subtle font-mono text-[10px] font-semibold text-text-secondary uppercase">
+Fejlesztés alatt
+</span>
+</div>
+<div>
+<span class="font-mono text-[11px] uppercase tracking-wider text-text-muted">Látvány &amp; Animáció</span>
+<h3 class="font-display text-lg font-bold text-text-main mt-1">
+Kreatív animációk
+</h3>
+<p class="font-body text-xs text-text-secondary mt-1 leading-relaxed">
+Különleges mozgások, betűk és figyelemfelkeltő látványelemek az oldalakon.
+</p>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-white border border-border-subtle shadow-sm flex flex-col justify-between h-56 relative group hover:border-electric-blue transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xl font-bold text-electric-blue">02</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-muted border border-border-subtle font-mono text-[10px] font-semibold text-text-secondary uppercase">
+Fejlesztés alatt
+</span>
+</div>
+<div>
+<span class="font-mono text-[11px] uppercase tracking-wider text-text-muted">Grafika</span>
+<h3 class="font-display text-lg font-bold text-text-main mt-1">
+Vizuális effektek
+</h3>
+<p class="font-body text-xs text-text-secondary mt-1 leading-relaxed">
+Interaktív grafikák, hátterek és játékos felületek a böngészőben.
+</p>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-white border border-border-subtle shadow-sm flex flex-col justify-between h-56 relative group hover:border-electric-blue transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xl font-bold text-electric-blue">03</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-muted border border-border-subtle font-mono text-[10px] font-semibold text-text-secondary uppercase">
+Fejlesztés alatt
+</span>
+</div>
+<div>
+<span class="font-mono text-[11px] uppercase tracking-wider text-text-muted">Mesterséges Intelligencia</span>
+<h3 class="font-display text-lg font-bold text-text-main mt-1">
+Okos megoldások &amp; AI
+</h3>
+<p class="font-body text-xs text-text-secondary mt-1 leading-relaxed">
+Mesterséges intelligenciára épülő hasznos eszközök és automatizációk.
+</p>
+</div>
+</div>
+</div></section>
+<!-- CTA / CONTACT BANNER -->
+<section class="w-full bg-white border-t border-border-subtle py-space-4xl relative overflow-hidden" id="kapcsolat">
+<div class="absolute bottom-0 right-1/4 w-[480px] h-[280px] bg-electric-glow blur-[120px] pointer-events-none rounded-full"></div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex flex-col gap-space-2xl"><div class="max-w-3xl flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-available opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-status-available"></span>
+</span>
+<span class="font-mono text-xs uppercase font-semibold text-status-available">Szabad kapacitás új projektekre</span>
+</div>
+<h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-text-main font-extrabold tracking-tight leading-none">
+Van egy jó ötleted?<br>
+Beszéljünk<span class="text-electric-blue">!</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pt-space-lg border-t border-border-subtle items-start">
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<span class="font-mono text-xs uppercase text-text-muted tracking-wider">Közvetlen Kapcsolat</span>
+<span class="font-display text-xl text-text-main font-bold">Győr, Magyarország</span>
+<p class="font-body text-sm text-text-secondary max-w-sm leading-relaxed">
+Írj bátran, és nézzük meg közösen, hogyan tudjuk a legjobban megvalósítani az elképzelésedet. Szívesen segítek új weboldal készítésében vagy meglévő frissítésében.
+</p>
+<div class="pt-3">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded bg-text-main text-white font-body text-sm font-semibold hover:bg-electric-blue transition-all duration-300 shadow-sm" href="mailto:hello@kochnorbert.hu">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span class="">Üzenet küldése</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col sm:flex-row gap-space-xl justify-between">
+<div class="flex flex-col gap-3">
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-wider">Elérhetőségek</span>
+<ul class="flex flex-col gap-2">
+<li class="">
+<a class="inline-flex items-center gap-1.5 text-text-main hover:text-electric-blue font-body text-sm font-medium transition-colors" href="https://www.linkedin.com/in/kochnorbert" rel="noopener noreferrer" target="_blank">
+<span class="">LinkedIn Profil</span>
+<span class="text-text-muted text-[12px]">↗</span>
+</a>
+</li>
+<li class="">
+<a class="inline-flex items-center gap-1.5 text-text-main hover:text-electric-blue font-body text-sm font-medium transition-colors" href="https://github.com/kochnorbert" rel="noopener noreferrer" target="_blank">
+<span class="">GitHub Profil</span>
+<span class="text-text-muted text-[12px]">↗</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-wider">Stúdió</span>
+<ul class="flex flex-col gap-2">
+<li class="">
+<a class="inline-flex items-center gap-1.5 text-text-main hover:text-electric-blue font-body text-sm font-medium transition-colors" href="https://kochdigitalstudio.hu" rel="noopener noreferrer" target="_blank">
+<span class="">Koch Digital Studio</span>
+<span class="text-electric-blue text-[12px] font-bold">↗</span>
+</a>
+</li>
+<li class="">
+<span class="font-mono text-xs text-text-muted">Készítette: Koch Norbert</span>
+</li>
+</ul>
+</div>
+</div>
+</div></div>
+</section>
+<!-- Dynamic Live Time Script -->
+<script>
+        (function () {
+          function updateClock() {
+            const timeEl = document.getElementById('live-time');
+            if (!timeEl) return;
+            const now = new Date();
+            const options = { timeZone: 'Europe/Budapest', hour: '2-digit', minute: '2-digit', hour12: false };
+            const timeString = new Intl.DateTimeFormat([], options).format(now);
+            timeEl.textContent = 'CET ' + timeString;
+          }
+          updateClock();
+          setInterval(updateClock, 30000);
+        })();
+      </script>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-surface-subtle border-t border-border-subtle mt-auto">
+<div class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl items-start">
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-display text-lg font-bold text-text-main tracking-tight">KOCH NORBERT</span>
+</div>
+<p class="font-body text-sm text-text-secondary max-w-sm leading-relaxed">
+Weboldal készítő és tervező. Megbízható, modern és gyorsan betöltődő weboldalak vállalkozásoknak.
+</p>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-text-muted text-[16px]">location_on</span>
+<span class="font-mono text-[11px] text-text-secondary uppercase tracking-wider">Győr, Magyarország</span>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-space-sm">
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-widest">Oldaltérkép</span>
+<nav class="flex flex-col gap-2">
+<a class="font-body text-sm text-text-secondary hover:text-text-main transition-colors" href="#kiemelt-munkak">Munkáim</a>
+<a class="font-body text-sm text-text-secondary hover:text-text-main transition-colors" href="#rolam">Rólam</a>
+<a class="font-body text-sm text-text-secondary hover:text-text-main transition-colors" href="#szolgaltatasok">Szolgáltatások</a>
+<a class="font-body text-sm text-text-secondary hover:text-text-main transition-colors" href="#labor">Saját projektek</a>
+<a class="font-body text-sm text-text-secondary hover:text-text-main transition-colors" href="#kapcsolat">Kapcsolat</a>
+</nav>
+</div>
+<div class="md:col-span-3 flex flex-col gap-space-sm">
+<span class="font-mono text-xs font-semibold text-electric-blue uppercase tracking-widest">Elérhetőségek</span>
+<ul class="flex flex-col gap-2">
+<li class="flex items-center gap-2 font-body text-sm">
+<span class="material-symbols-outlined text-[16px] text-text-muted">arrow_outward</span>
+<a class="text-text-secondary hover:text-text-main transition-colors" href="https://www.linkedin.com/in/kochnorbert" rel="noopener noreferrer" target="_blank">LinkedIn Profil</a>
+</li>
+<li class="flex items-center gap-2 font-body text-sm">
+<span class="material-symbols-outlined text-[16px] text-text-muted">arrow_outward</span>
+<a class="text-text-secondary hover:text-text-main transition-colors" href="https://github.com/kochnorbert" rel="noopener noreferrer" target="_blank">GitHub Profil</a>
+</li>
+<li class="flex items-center gap-2 font-body text-sm">
+<span class="material-symbols-outlined text-[16px] text-electric-blue">arrow_outward</span>
+<a class="text-text-secondary hover:text-text-main transition-colors" href="https://kochdigitalstudio.hu" rel="noopener noreferrer" target="_blank">Koch Digital Studio</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-space-2xl pt-space-lg border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<span class="font-mono text-xs text-text-muted">© 2026 Koch Norbert. Minden jog fenntartva.</span>
+<div class="flex items-center gap-space-md">
+<span class="font-mono text-xs text-text-muted">Győrben tervezve és fejlesztve</span>
+</div>
+</div></div>
+</footer>
+
+
+</body></html>
